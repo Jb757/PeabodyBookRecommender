@@ -22,3 +22,4 @@ to the terminal. In future this will be used to create the web app as well as pr
 with more books
 - Implement a way in which to get different types of recommendations e.g. more exploratory or thematic models - more research to be done here
 - Remove all traces of the pandas library. I've used it so far for convenience but it isn't efficient.
+- Get ratings for all books in future so users can change how recommendations are ranked instead of most similar.
