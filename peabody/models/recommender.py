@@ -13,25 +13,14 @@ class Recommender:
         self.cosine_similarity_matrix = None
 
     def get_recommendations(self, title: str, results: int):
-        # Get the index of the books that matches the title
         indices = pd.Series(self.df.index, index=self.df['Title']).drop_duplicates()
         idx = indices[title]
         if type(idx) != np.int64:
             idx = idx[0]
-
-        # Get the pairwsie similarity scores of all books with that book
         sim_scores = list(enumerate(self.cosine_similarity_matrix[idx]))
-
-        # Sort the movies based on the similarity scores
         sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
-
-        # Get the scores of the 10 most similar books
         sim_scores = sim_scores[1:results+1]
-
-        # Get the books indices
         book_indices = [i[0] for i in sim_scores]
-
-        # Return the top 10 most similar books
         return self.df['Title'].iloc[book_indices]
 
     def _cosine_similarity_matrix(self):
