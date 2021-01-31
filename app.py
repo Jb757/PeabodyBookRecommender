@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, g
 from flask_sqlalchemy import SQLAlchemy
-from peabody.models.tfidf import TfidfRecommender
+from peabody import TfidfRecommender
 
 
 
