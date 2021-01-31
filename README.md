@@ -11,22 +11,20 @@ and TF-IDF implementation for the models.
 
 ### `main.py`
 
-`main.py` right now only has a few lines of code which when run will output to the terminal the top most similar `results`
-to the terminal. In future this will be used to create the web app as well as produce the recommendations. 
+`main.py` is now obsolete and is only really used for debugging Peabody locally.
+
+### `app.py`
+
+`app.py` is now the main file to run (will go through this in installation below). This is now where the code for the web 
+app resides.
 
 ## Installation
 
 - First run `pip install -r requirements.txt` to install all of the required dependencies
 - You must have the spacy small language model, if you do not, run `python -m spacy download en_core_web_sm`
-- running the main.py file with line 7 commented out will train a model for the recommender model you have
-selected at the time `Doc2VecRecommender` will create a file called `doc2vecModel` and the `TfidRecommender` will create
- a file called `model.pickle`. 
-- Once the models are trained then you can uncomment line 7 and they will be significantly quicker to find 
-recommendations printed to your terminal.
-
-
-
-
+- The web app now works with the TFIDFRecommender module. This is the basic version of the recommender but now once `app.py`
+is run the web app locallu will use the `model.pickle` vectors in order to fetch recommendations
+- I will be deploying this soon once a couple more features have been built in.
 
 ## Future plans 
 
