@@ -23,7 +23,6 @@ class Recommender:
         book_indices = [i[0] for i in sim_scores]
         recommendations = self.df.iloc[book_indices, [1, 2, 5]].reset_index(drop=True)
         recommendations.index = np.arange(1, len(recommendations)+1)
-
         return recommendations
 
     def _cosine_similarity_matrix(self):
