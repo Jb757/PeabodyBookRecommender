@@ -1,6 +1,5 @@
 import nltk
 from nltk.tokenize import word_tokenize
-import spacy
 import re
 import ftfy
 
@@ -16,8 +15,6 @@ inv_com_re = re.compile(r"'")
 clef_re = re.compile(r'\\u00e0 clef')
 close_re = re.compile(r'}')
 comma_re = re.compile(r',')
-
-sp = spacy.load('en_core_web_sm')
 
 def preprocess(text, stop_words):
     p_text = ftfy.fix_text(text)
