@@ -1,9 +1,10 @@
 from peabody.models import Doc2VecRecommender, TfidfRecommender
 
 file = "/Users/joshuabailey/PycharmProjects/bookrecommender/misc/data/all_book_summaries.csv"
-model = Doc2VecRecommender()
+model = TfidfRecommender()
 model.load_df(file)
-#model.load_model("doc2vecModel")
+model.load_model("model.pickle")
 model.similarity_matrix()
-recommendations = model.get_recommendations("The Hunt for Red October", results = 20)
-print(recommendations)
+recommendations = model.get_recommendations("The Hunt for Red October", results = 10)
+#print(recommendations)
+print(recommendations.to_html(classes='data'))

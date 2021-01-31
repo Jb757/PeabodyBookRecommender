@@ -1,9 +1,13 @@
 import nltk
-nltk.download('punkt')
 from nltk.tokenize import word_tokenize
 import spacy
 import re
 import ftfy
+
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
 
 open_re  = re.compile(r"{\"\/m\/[a-zA-Z0-9]+\"|\"\/m\/[a-zA-Z0-9]+")
 colon_re = re.compile(r":")

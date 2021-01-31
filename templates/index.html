@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</style>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/style.css" />
+    <title>Peabody Book Recommender</title>
+</head>
+<body>
+    <div class="container">
+          {% if message %}
+          <p class="message">{{ message | safe }}</p>
+          {% endif %}
+          <form action="/recommendations" method="POST">
+            <div class="form-group">
+              <h3>Book Name</h3>
+              <input
+                type="text"
+                name="book_name"
+                placeholder=""
+              />
+            </div>
+            <div class="form-group">
+              <h3>Number of Recommendations</h3>
+              <input
+                type="number"
+                name="recommendations"
+                placeholder=""
+              />
+            </div>
+              <input type="submit" value="Submit" class="btn" />
+              </form>
+</body>
+</html>
