@@ -9,12 +9,12 @@ This is a library which contains the `models` and `utils` necessary to produce t
 as the idea will be to have multiple models which cater to different types of recommendations. Right now there is a Doc2Vec
 and TF-IDF implementation for the models. 
 
-### main.py
+### `main.py`
 
 `main.py` right now only has a few lines of code which when run will output to the terminal the top most similar `results`
 to the terminal. In future this will be used to create the web app as well as produce the recommendations. 
 
-### Installation
+## Installation
 
 - First run `pip install -r requirements.txt` to install all of the required dependencies
 - You must have the spacy small language model, if you do not, run `python -m spacy download en_core_web_sm`
