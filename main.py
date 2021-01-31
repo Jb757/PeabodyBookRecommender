@@ -1,6 +1,6 @@
 from peabody.models import Doc2VecRecommender, TfidfRecommender
 
-file = "/Users/joshuabailey/PycharmProjects/bookrecommender/misc/data/all_book_summaries.csv"
+file = "/misc/data/all_book_summaries.csv"
 model = TfidfRecommender()
 model.load_df(file)
 model.load_model("model.pickle")

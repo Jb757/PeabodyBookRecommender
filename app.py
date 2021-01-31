@@ -5,9 +5,7 @@ from peabody.models import TfidfRecommender
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
-db = "BookSummaries.sql"
-file = "/Users/joshuabailey/PycharmProjects/bookrecommender/misc/data/all_book_summaries.csv"
+file = "/misc/data/all_book_summaries.csv"
 model = TfidfRecommender()
 model.load_df(file)
 model.load_model("model.pickle")
