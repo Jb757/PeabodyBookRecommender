@@ -1,5 +1,5 @@
 from peabody.models.recommender import Recommender
-from peabody.utils import tokenised_summary
+from peabody.utils.preprocessing import tokenised_summary
 
 import numpy as np
 from gensim.models.doc2vec import Doc2Vec, TaggedDocument
