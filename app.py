@@ -25,7 +25,5 @@ def submit():
     df = model.get_recommendations(book_name, number_of_recommendations)
     return render_template('submit.html',  tables=[df.to_html(classes='data', header="true")] )
 
-
-git p
 if __name__ == '__main__':
     app.run()
