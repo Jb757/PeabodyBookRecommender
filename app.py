@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from peabody.models.tfidf import TfidfRecommender
+import os
 
 
 
@@ -22,4 +23,4 @@ def submit():
     return render_template('submit.html',  tables=[df.to_html(classes='data', header="true")] )
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=int(os.environ.get("port", 5000)))
