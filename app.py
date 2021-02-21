@@ -17,9 +17,19 @@ def index():
 
 @app.route('/recommendations', methods =['POST'])
 def submit():
+    
     book_name = request.form['book_name']
-    number_of_recommendations = int(request.form['recommendations'])
-    df = model.get_recommendations(book_name, number_of_recommendations)
+
+    if request.form['recommendations']:
+        number_of_recommendations = int(request.form['recommendations'])
+    else:
+        number_of_recommendations = 10
+
+    if request.form['genre']:
+        genre = request.form['genre']
+    else:
+        genre = "None"
+    df = model.get_recommendations(book_name, number_of_recommendations, genre)
     return render_template('submit.html',  tables=[df.to_html(classes='data', header="true")] )
 
 if __name__ == '__main__':
